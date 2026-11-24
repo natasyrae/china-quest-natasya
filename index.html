@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#10101b">
+<meta name="description" content="Explore Natasya Suryanto’s portfolio on a playable pixel-art map of Chongqing, Shanghai, and Harbin.">
+<title>China Quest — Natasya Suryanto’s Interactive Portfolio</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="assets/pixel.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="assets/world-map.webp" as="image">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="panels.css">
+<link rel="stylesheet" href="game.css">
+<script defer src="panels.js"></script>
+<script defer src="app.js"></script>
+<script defer src="game.js"></script>
+</head>
+<body id="home">
+<svg class="icon-defs" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<defs>
+<symbol id="i-console" viewBox="0 0 24 20"><path fill="currentColor" d="M5 2h14v2h2v3h1v4h1v5h-2v2h-4v-2h-2v-2H9v2H7v2H3v-2H1v-5h1V7h1V4h2z"/><path fill="#171624" d="M6 6h2v2h2v2H8v2H6v-2H4V8h2zm11 0h2v2h-2zm-3 3h2v2h-2z"/></symbol>
+<symbol id="i-pin" viewBox="0 0 20 20"><path fill="currentColor" fill-rule="evenodd" d="M7 1h6v2h3v2h1v6h-2v3h-2v2h-2v3H9v-3H7v-2H5v-3H3V5h1V3h3zm1 5v4h4V6z"/></symbol>
+<symbol id="i-map" viewBox="0 0 20 20"><path fill="currentColor" fill-rule="evenodd" d="M1 4h3V3h3V2h2v1h3v1h2V3h3V2h2v14h-3v1h-3v1h-2v-1H8v-1H6v1H3v1H1zm2 2v9h2v-1h1V5H5v1zm5-1v9h2v1h2V6h-2V5zm6 1v9h2v-1h1V5h-1v1z"/></symbol>
+<symbol id="i-play" viewBox="0 0 16 16"><path fill="currentColor" d="M3 1h2v2h3v2h3v2h3v2h-3v2H8v2H5v2H3z"/></symbol>
+<symbol id="i-flag" viewBox="0 0 20 20"><path fill="currentColor" d="M3 2h11v2h4v2h-2v2h-2v2h3v2H5v6H3z"/></symbol>
+<symbol id="i-volume" viewBox="0 0 20 20"><path fill="currentColor" d="M2 7h4V5h2V3h2v14H8v-2H6v-2H2zm10-1h2v2h1v4h-1v2h-2v-2h1V8h-1zm3-4h2v2h1v2h1v8h-1v2h-1v2h-2v-2h1v-2h1V6h-1V4h-1z"/></symbol>
+<symbol id="i-mute" viewBox="0 0 20 20"><path fill="currentColor" d="M2 7h4V5h2V3h2v14H8v-2H6v-2H2zm10-1h2v2h2V6h2v2h-2v3h2v2h-2v-2h-2v2h-2v-2h2V8h-2z"/></symbol>
+<symbol id="i-book" viewBox="0 0 20 20"><path fill="currentColor" d="M2 3h6v1h4V3h6v13h-5v1H7v-1H2zm2 2v9h4v1h1V6H7V5zm7 1v9h1v-1h4V5h-3v1z" fill-rule="evenodd"/></symbol>
+<symbol id="i-download" viewBox="0 0 20 20"><path fill="currentColor" d="M9 2h2v8h4v2h-2v2h-2v2H9v-2H7v-2H5v-2h4zM2 14h2v3h12v-3h2v5H2z"/></symbol>
+<symbol id="i-menu" viewBox="0 0 20 20"><path fill="currentColor" d="M2 4h16v2H2zm0 5h16v2H2zm0 5h16v2H2z"/></symbol>
+<symbol id="i-spark" viewBox="0 0 21 23"><path fill="currentColor" d="M10 0h1v5h2v3h3v2h5v2h-5v2h-3v3h-2v6h-1v-6H8v-3H5v-2H0v-2h5V8h3V5h2z"/></symbol>
+<symbol id="i-person" viewBox="0 0 20 20"><path fill="currentColor" d="M7 1h6v2h1v5h-1v2H7V8H6V3h1zm-2 11h10v1h2v2h1v3H2v-3h1v-2h2z"/></symbol>
+<symbol id="i-brief" viewBox="0 0 20 20"><path fill="currentColor" fill-rule="evenodd" d="M7 2h6v3h5v2h1v10H1V7h1V5h5zm2 2v1h2V4zM3 9v2h6v2h2v-2h6V9h-6v1H9V9z"/></symbol>
+<symbol id="i-school" viewBox="0 0 20 20"><path fill="currentColor" d="M9 2h2v1h3v1h2v1h3v2h-3v1h-2v1h-3v1H9V9H6V8H4V7H1V5h3V4h2V3h3zM4 10h2v2h3v1h2v-1h3v-2h2v4h-2v1h-3v2H9v-2H6v-1H4z"/></symbol>
+</defs></svg>
+<a class="skip" href="#world-map">Skip to the world map</a>
+<header class="site-head">
+  <div class="shell nav-inner">
+    <a class="brand" href="#home" aria-label="Natasya.exe home"><svg aria-hidden="true"><use href="#i-console"/></svg><span>NATASYA<span class="brand-ext">.EXE</span></span></a>
+    <nav class="main-nav" aria-label="Main navigation" id="mainNav">
+      <a class="current" aria-current="page" href="#world-map">World map</a>
+      <button type="button" data-panel="chongqing">Profile</button>
+      <button type="button" data-panel="shanghai">Projects</button>
+      <button type="button" data-panel="contact">Contact</button>
+    </nav>
+    <div class="nav-actions">
+      <button type="button" class="sound" id="sound" aria-label="Turn sound on" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-mute"/></svg><span>Sound <b>OFF</b></span></button>
+      <button type="button" class="menu-btn" id="menu" aria-label="Open navigation" aria-controls="mainNav" aria-expanded="false"><svg class="icon" aria-hidden="true"><use href="#i-menu"/></svg></button>
+    </div>
+  </div>
+</header>
+<main class="shell">
+  <div class="map-intro">
+    <div>
+      <div class="hero-label"><svg class="icon" aria-hidden="true"><use href="#i-map"/></svg> NATASYA SURYANTO’S PORTFOLIO</div>
+      <h1>CHINA <span>QUEST</span><svg aria-hidden="true" class="title-spark"><use href="#i-spark"/></svg></h1>
+      <p>Walk the trail or pick a city marker to explore my portfolio.</p>
+    </div>
+    <button type="button" class="guide-button" id="guide"><svg class="icon" aria-hidden="true"><use href="#i-book"/></svg>How to play</button>
+  </div>
+  <div class="map-console">
+    <section id="world-map" aria-label="Interactive world map"><div id="gameRoot"></div><noscript><img class="static-map" src="assets/world-map.webp" alt="Chongqing, Shanghai, and Harbin connected by one trail"><p>Enable JavaScript to walk the map, or <a href="assets/Natasya-Suryanto-CV.pdf" download>download my CV</a>.</p></noscript></section>
+    <div class="status-panel">
+      <button type="button" class="player" data-panel="chongqing" aria-label="Open Natasya Suryanto’s profile"><span class="avatar-frame"><img src="assets/natasya-avatar.webp" width="52" height="52" alt=""></span>
+      <span class="player-info"><span class="small-label">PLAYER 01</span><strong>Natasya Suryanto</strong><span class="role">Software Engineering <i></i> UI/UX Design</span></span></button>
+      <div class="progress-wrap"><span class="progress-pin"><svg aria-hidden="true"><use href="#i-flag"/></svg></span><div class="progress-data">
+      <div class="progress-head"><span class="small-label">EXPLORATION</span><span id="progressText">0/3 cities</span></div>
+      <div class="progress-track" id="progressTrack" role="progressbar" aria-label="Cities visited" aria-valuemin="0" aria-valuemax="3" aria-valuenow="0"><b></b><b></b><b></b></div></div></div>
+    </div>
+  </div>
+</main>
+<footer class="shell site-foot"><span>© 2026 Natasya Suryanto</span><a href="assets/Natasya-Suryanto-CV.pdf" download><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg>Download CV</a></footer>
+<dialog id="guideDialog" aria-labelledby="guideTitle">
+  <div class="guide-head"><svg class="icon" aria-hidden="true"><use href="#i-console"/></svg><h2 id="guideTitle">How to play</h2><button type="button" class="dialog-close" aria-label="Close guide">×</button></div>
+  <div class="guide-content">
+    <ul>
+      <li><span class="guide-key">WASD</span><div><strong>Walk around</strong><p>Focus the map and use WASD or the arrow keys to move. You can also click or tap a point to walk there.</p></div></li>
+      <li><span class="guide-key">E</span><div><strong>Explore a city</strong><p>Press E near a city marker to open its journal. Selecting a marker walks you there and opens it for you.</p></div></li>
+      <li><span class="guide-key">Esc</span><div><strong>Return to the map</strong><p>Close the journal to keep exploring from the same spot.</p></div></li>
+    </ul>
+    <button type="button" class="play-button" id="guidePlay"><svg class="icon" aria-hidden="true"><use href="#i-play"/></svg>Explore the map</button>
+  </div>
+</dialog>
+<dialog id="portfolioDialog" aria-labelledby="portfolioTitle"><div id="portfolioPanel"></div></dialog>
+</body>
+</html>
